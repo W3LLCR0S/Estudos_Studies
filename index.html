@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Introdução ao JavaScript</h1>
+    </div>
+    <div>
+        <h2>Ver data e hora</h2>
+        <p>Clique no botão para ver a data e a hora do sistema</p>
+        <button onclick="document.getElementById('dh').innerHTML = Date()">
+            Veja a data e a hora
+        </button>
+        <p id="dh"></p>
+    </div>
+    <div>
+        <div>
+            <h2>Transferir Informações com JavaScript</h2>
+            <p id="par1">
+                Este parágrafo será copiado para o parágrafo abaixo do botão
+            </p>
+            <button onclick="myFunction()">
+                Clique aqui para copiar
+            </button>
+            <p id="par2"></p>
+        </div>
+        <div>
+            <h2>Editando o src de uma imagem</h2>
+            <p>JavaScript pode editar a fonte de uma imagem</p>
+            <button onclick="ligar()">Acender</button>
+            <img id="lampada" src="https://www.w3schools.com/js/pic_bulboff.gif" alt="Uma lâmpada apagada">
+            <button onclick="desligar()">Desligar</button>
+        </div>
+    </div>
+    <div>
+        <h2>Alterando estilo com JS</h2>
+
+        <p id="pStyle">Este parágrafo será alterado ao clique do botão</p>
+        <button onclick="eStyle()" onmouseover="editDisplay()" onmouseout="editDisplay2()">Clique para editar</button>
+    </div>
+    <div>
+        <h2>Janela de alerta</h2>
+        <p>Clique no botão para ver as mensagens</p>
+        <button onclick="verJanela()">Ver janela</button>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("par1").innerHTML;
+            document.getElementById("par2").innerHTML = x;
+        }
+
+        function ligar() {
+            document.getElementById("lampada").src = "https://www.w3schools.com/js/pic_bulbon.gif";
+        }
+
+        function desligar() {
+            document.getElementById("lampada").src = "https://www.w3schools.com/js/pic_bulboff.gif";
+        }
+
+        function eStyle() {
+            document.getElementById("pStyle").style.fontSize = "3em";
+        }
+
+        function editDisplay() {
+            document.getElementById("pStyle").style.display = "none";
+        }
+
+        function editDisplay2() {
+            document.getElementById("pStyle").style.display = "block";
+        }
+
+        function verJanela() {
+            window.alert("Acertou!");
+        }
+    </script>
+</body>
+</html>
